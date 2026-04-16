@@ -11,7 +11,7 @@ function App() {
 
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/health-data/${deviceId}`
+        `https://mini-health-dashboard-backend.onrender.com/api/health-data/${deviceId}`
       );
       setHealthData(response.data);
     } catch (error) {
