@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "./App.css";
 
@@ -6,7 +6,7 @@ function App() {
   const [deviceId, setDeviceId] = useState("");
   const [healthData, setHealthData] = useState([]);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     if (!deviceId.trim()) return;
 
     try {
@@ -17,7 +17,7 @@ function App() {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
+  }, [deviceId]);
 
   useEffect(() => {
     if (!deviceId.trim()) return;
@@ -27,7 +27,7 @@ function App() {
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [deviceId]);
+  }, [deviceId, fetchData]);
 
   return (
     <div className="container">
