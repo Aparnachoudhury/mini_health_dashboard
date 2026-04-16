@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "device_id": "DEV123",
+    "heart_rate": 82,
+    "spo2": 98,
+    "timestamp": "2026-04-16T12:00:00Z"
+  },
+  {
+    "device_id": "DEV123",
+    "heart_rate": 85,
+    "spo2": 97,
+    "timestamp": "2026-04-16T12:05:00Z"
+  }
+]
